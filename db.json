@@ -1,0 +1,62 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "name": "Dummy",
+      "email": "dummy@gmail.com",
+      "password": "123456"
+    },
+    {
+      "email": "a@gmail.com",
+      "firstName": "Mr. A",
+      "password": "123456",
+      "id": 2
+    },
+    {
+      "email": "nigam.himanshu0205@gmail.com",
+      "firstName": "Himanshu Nigam",
+      "password": "Himanshu@123",
+      "id": 3
+    },
+    {
+      "name": "Sanjay Kumar",
+      "email": "sanjay@gmail.com",
+      "password": "2345trf",
+      "id": 4
+    },
+    {
+      "name": "Vikas Gupta",
+      "email": "vikas@gmail.com",
+      "password": "123456",
+      "id": 6
+    },
+    {
+      "name": "Priya",
+      "email": "priya@gmail.com",
+      "password": "123456",
+      "id": 7
+    },
+    {
+      "name": "Poonam Nigam",
+      "email": "poonam@gmail.com",
+      "password": "123456",
+      "id": 9
+    },
+    {
+      "name": "testing",
+      "email": "test@gmail.com",
+      "password": "123890",
+      "id": 10
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
