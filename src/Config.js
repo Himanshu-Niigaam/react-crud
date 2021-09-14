@@ -1,5 +1,5 @@
 const Config = {
-  //   baseUrl: "https://jsonplaceholder.typicode.com",
-  baseUrl: "http://localhost:3001",
+  baseUrl: "https://jsonplaceholder.typicode.com",
+  baseLocalUrl: "http://localhost:3001",
 };
 export default Config;

@@ -25,7 +25,7 @@ const Routes = (props) => {
           <Dashboard />
         </Route>
         <Route path="/">
-          <Redirect to="/registration" />
+          <Redirect to="/login" />
         </Route>
         <Route path="*">
           <PageNotFound />

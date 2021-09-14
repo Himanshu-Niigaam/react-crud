@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Config from "../../Config";
 import { withRouter } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import "../Login/Login.css";
 
 class Login extends Component {
   constructor() {
@@ -11,28 +13,33 @@ class Login extends Component {
     };
   }
 
+  /** Login section starts from here */
   login() {
     fetch(
-      `${Config.baseUrl}/posts` +
+      `${Config.baseUrl}/users` +
         "?email=" +
         this.state.email +
         "&password=" +
         this.state.password
     ).then((data) => {
       data.json().then((resp) => {
-        if (resp.length > 0) {
+        if (
+          resp[0].email === this.state.email &&
+          resp[0].address.zipcode === this.state.password
+        ) {
+          window.sessionStorage.setItem("userData", JSON.stringify(resp));
           this.props.history.push("/dashboard");
         } else {
           alert("Please check your email and password and try again.");
         }
-        console.warn("resp", resp);
       });
     });
   }
 
+  /**  HTML section starts from here  **/
   render() {
     return (
-      <div className="container">
+      <div className="containers">
         <div className="logo">User Login</div>
         <div className="login-item">
           <div className="form form-login">
@@ -48,6 +55,7 @@ class Login extends Component {
                   onChange={(event) =>
                     this.setState({ email: event.target.value })
                   }
+                  placeholder="Email"
                 />
               </div>
             </div>
@@ -64,6 +72,7 @@ class Login extends Component {
                   onChange={(event) =>
                     this.setState({ password: event.target.value })
                   }
+                  placeholder="Password"
                 />
               </div>
             </div>
@@ -76,6 +85,11 @@ class Login extends Component {
                 type="submit"
                 value="Submit"
               />
+            </div>
+
+            {/* Go to Registration page */}
+            <div className="text-center">
+              <Link to="/registration">Go to Register</Link>
             </div>
           </div>
         </div>
